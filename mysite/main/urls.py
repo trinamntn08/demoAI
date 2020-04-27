@@ -24,6 +24,8 @@ app_name ='main'
 urlpatterns = [
     path('',views.homepage, name='homepage'),
     path("<single_slug>", views.single_slug,name="single_slug"),
+    path('image-upload/', views.uploadImageView, name='image-upload'),
+    path("result/", views.displayResult, name="result"),
 ]
 
 if settings.DEBUG:

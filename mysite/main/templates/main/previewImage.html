@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="data:;base64,=">
+</head>
+<html lang="en">
+{% extends "main/header.html" %}
+
+{% block content %}
+<center>
+<body >
+    <h1> How old do i look?</h1>
+    <h4>trinamntn08@gmail.com</h4>
+    <br>
+
+    <img class="text-center" src="{{ upFile }}" class = 'mx-auto d-block' width="400">
+    <!--
+    <canvas class="text-center"  width='600' height="800" id="canvas" class="canvas"></canvas>
+    <script>
+        function displayResult(){
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var imageObj = new Image();
+            imageObj.src = "{{ upFile }}";
+
+            imageObj.onload = function() {
+                var imgWidth = imageObj.width;
+                var imgHeight = imageObj.height;
+                context.drawImage(imageObj,0,0,imgWidth,imgHeight);
+            };
+        }
+    </script>
+    -->
+    <!-- <img src="{{ upFile }}" alt="Not Found Image" width="400"/> -->
+    <br> <br>
+    <form method = "post" id="form_id" enctype="multipart/form-data">
+        {% csrf_token %}
+         <input type="file" name="imageFile">
+         <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+    <br>
+    <font size="2">Sorry if we didn't quite get it right - we are still improving this feature</font>
+</body>
+</center>
+{% endblock %}
+<br><br>
+
+</html>

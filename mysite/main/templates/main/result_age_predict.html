@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="data:;base64,=">
+</head>
+<html lang="en">
+{% extends "main/header.html" %}
+
+{% block content %}
+<body>
+{% for image in images_results %}
+    <div class="col-md-4">
+    <img src="{{image.imageFile.url}}" width="100px" >
+    </div>
+{% endfor %}
+</body>
+
+{% endblock %}
+<br><br>
+
+</html>

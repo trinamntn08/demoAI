@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+import os
 
 # Create your models here.
 class TutorialCategory(models.Model):
@@ -37,3 +38,7 @@ class Tutorial(models.Model):
     def __str__(self):
         return self.tutorial_title
 
+# Define upload Image class
+class ImageUpload(models.Model):
+    name=models.CharField(max_length=50)
+    imageFile=models.ImageField(upload_to='images/')
